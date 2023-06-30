@@ -1,0 +1,40 @@
+server:
+  port: 8989
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_csv_user
+    username: ubuntu
+    password: ubuntu
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    schemas: db_csv_user
+    user: ubuntu
+    password: ubuntu
+    baseline-on-migrate: true
+    validateOnMigrate: false
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /swagger.json
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true

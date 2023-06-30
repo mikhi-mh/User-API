@@ -80,8 +80,8 @@ public class UserController {
     @GetMapping("/boys")
     ResponseEntity<?> getAllBoys(){
         try{
-            List<UserEntity> users = userService.getAllBoys();
-            return ResponseEntity.ok(users);
+            List<UserEntity> boys = userService.getAllBoys();
+            return ResponseEntity.ok(boys);
         }
         catch(Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -91,8 +91,20 @@ public class UserController {
     @GetMapping("/girls")
     ResponseEntity<?> getAllGirls(){
         try{
-            List<UserEntity> users = userService.getAllGirls();
-            return ResponseEntity.ok(users);
+            List<UserEntity> girls = userService.getAllGirls();
+            return ResponseEntity.ok(girls);
+        }
+        catch(Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(e.toString());
+        }
+    }
+
+    @GetMapping("/adults")
+    ResponseEntity<?> getAllAdults(){
+        try{
+            List<UserEntity> adults = userService.getAllAdults();
+            return ResponseEntity.ok(adults);
         }
         catch(Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND)

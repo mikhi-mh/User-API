@@ -8,6 +8,7 @@ import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -56,6 +57,7 @@ public class UserService {
         }
         return users;
     }
+    // this is using directly JpaRepo...this is very efficient
 
     public List<UserEntity> getAllGirls() {
         List<UserEntity> users = getAllUsers();
@@ -65,5 +67,15 @@ public class UserService {
         return users.stream()
                 .filter(user -> user.getGender().toString().equalsIgnoreCase("female"))
                 .collect(Collectors.toList());
+    }
+    // this is using streamAPI
+
+    public List<UserEntity> getAllAdults(){
+        LocalDate eighteenYearsAgo = LocalDate.now().minusYears(18);
+        List<UserEntity> adults = userRepo.findAdults(eighteenYearsAgo);
+        if(adults.isEmpty()){
+            throw new UserNotFoundException("No data found or There are no users in the database" );
+        }
+        return adults;
     }
 }

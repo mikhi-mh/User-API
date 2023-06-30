@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+////            Swagger-UI --->     http://localhost:8989/swagger-ui.html
 @RequestMapping("/user")
 @RestController
 public class UserController {
@@ -28,6 +28,7 @@ public class UserController {
                     .body("Can't create user : ---> " + e.toString());
         }
     }
+    //          http://localhost:8989/user/
 
     @GetMapping("/{id}")
     ResponseEntity<?> getUserById(@PathVariable Integer id){
@@ -40,6 +41,7 @@ public class UserController {
                     .body(e.toString());
         }
     }
+    //          http://localhost:8989/user/2
 
     @PutMapping("/{id}")
     ResponseEntity<String> updateUser(@RequestBody UserEntity updatedUser, @PathVariable Integer id){
@@ -52,6 +54,7 @@ public class UserController {
                     .body(e.toString());
         }
     }
+    //          http://localhost:8989/user/3
 
     @DeleteMapping("/{id}")
     ResponseEntity<String> deleteUserById(@PathVariable Integer id){
@@ -64,6 +67,7 @@ public class UserController {
                     .body(e.toString());
         }
     }
+    //          http://localhost:8989/user/1
 
     @GetMapping("/users")
     ResponseEntity<?> getAllUsers(){
@@ -76,6 +80,7 @@ public class UserController {
                     .body(e.toString());
         }
     }
+    //          http://localhost:8989/user/users
 
     @GetMapping("/boys")
     ResponseEntity<?> getAllBoys(){
@@ -88,6 +93,8 @@ public class UserController {
                     .body(e.toString());
         }
     }
+    //          http://localhost:8989/user/boys
+
     @GetMapping("/girls")
     ResponseEntity<?> getAllGirls(){
         try{
@@ -99,6 +106,7 @@ public class UserController {
                     .body(e.toString());
         }
     }
+    //          http://localhost:8989/user/girls
 
     @GetMapping("/adults")
     ResponseEntity<?> getAllAdults(){
@@ -111,4 +119,5 @@ public class UserController {
                     .body(e.toString());
         }
     }
+    //          http://localhost:8989/user/adults
 }

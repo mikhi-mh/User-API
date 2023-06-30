@@ -37,8 +37,6 @@ public class UserEntity {
 
     @NotNull(message = "Date of Birth should not be null")
     @PastOrPresent
-    @DateTimeFormat(pattern = "dd/MM/yyyy" )
-    @Pattern(regexp = "^\\d{2}/\\d{2}/\\d{4}$", message = "Date of Birth must be in the format dd/MM/yyyy")
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
@@ -63,16 +61,22 @@ public class UserEntity {
     @Column(length = 255)
     private String address;
 
-    //@NotNull(message = "Date of Admission should not be null")
+    @NotNull(message = "Date of Admission should not be null")
     @PastOrPresent
-    @DateTimeFormat(pattern = "dd/MM/yyyy" )
-    @Pattern(regexp = "^\\d{2}/\\d{2}/\\d{4}$", message = "Date of Admission must be in the format dd/MM/yyyy")
     @Column(name = "date_of_admission")
     private LocalDate dateOfAdmission;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private UserRole role;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "subject")
+    private Subject subject;
+
 //endregion
 
-    //region other Mthods
+    //region other Methods
     @PostLoad
     public void calculateAge(){
         if(dateOfBirth != null){
@@ -83,3 +87,13 @@ public class UserEntity {
     }
     //endregion
 }
+
+/*
+*
+*     @NotNull(message = "Date of Birth should not be null")
+    @PastOrPresent
+    @DateTimeFormat(pattern = "dd/MM/yyyy" )
+    @Pattern(regexp = "^\\d{2}/\\d{2}/\\d{4}$", message = "Date of Birth must be in the format dd/MM/yyyy")
+    @Column(name = "date_of_birth")
+    private LocalDate dateOfBirth;
+* */

@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "9fb5d401-7ca0-4e12-a075-8de8f146cc44",
+		"name": "CSV_User_API",
+		"description": "API endpoints for User operations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Aarohi\",\n  \"middleName\": null,\n  \"lastName\": \"Sharma\",\n  \"dateOfBirth\": \"2005-01-01\",\n  \"gender\": \"FEMALE\",\n  \"mobileNumber\": \"+919876543210\",\n  \"emailId\": \"aarav.sharma@email.com\",\n  \"address\": \"Mumbai, India\",\n  \"dateOfAdmission\": \"2022-06-01\",\n  \"role\": \"STUDENT\",\n  \"subject\": \"MATHS\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"user",
+						""
+					]
+				},
+				"description": "Create a new user"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"user",
+						"1"
+					]
+				},
+				"description": "Get user details by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Aarav\",\n    \"middleName\": null,\n    \"lastName\": \"Sharma\",\n    \"dateOfBirth\": \"2005-01-01\",\n    \"age\": 18.491444216290212,\n    \"gender\": \"MALE\",\n    \"mobileNumber\": \"+919876543210\",\n    \"emailId\": \"aarav.sharma123@email.com\",\n    \"address\": \"Mumbai, India\",\n    \"dateOfAdmission\": \"2022-06-01\",\n    \"role\": \"STUDENT\",\n    \"subject\": \"MATHS\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/user/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"user",
+						"123"
+					]
+				},
+				"description": "Update user details by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/user/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"user",
+						"6"
+					]
+				},
+				"description": "Delete user by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/user/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"user",
+						"users"
+					]
+				},
+				"description": "Get all users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Boys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/user/boys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"user",
+						"boys"
+					]
+				},
+				"description": "Get all users who are boys"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Girls",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/user/girls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"user",
+						"girls"
+					]
+				},
+				"description": "Get all users who are girls"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Adults",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/user/adults",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"user",
+						"adults"
+					]
+				},
+				"description": "Get all users who are adults"
+			},
+			"response": []
+		}
+	]
+}

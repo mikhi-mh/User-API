@@ -1,0 +1,13 @@
+{
+  "firstName": "Aarav",
+  "middleName": null,
+  "lastName": "Sharma",
+  "dateOfBirth": "2005-01-01",
+  "gender": "MALE",
+  "mobileNumber": "+919876543210",
+  "emailId": "aarav.sharma@email.com",
+  "address": "Mumbai, India",
+  "dateOfAdmission": "2022-06-01",
+  "role": "STUDENT",
+  "subject": "MATHS"
+}
